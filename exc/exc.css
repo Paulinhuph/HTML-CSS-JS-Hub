@@ -1,0 +1,156 @@
+/* =============================================================================
+  TRILHA DE ENGENHARIA DE SOFTWARE: 100 EXERCÍCIOS DE CSS3
+  ============================================================================= */
+/* 001: Mude a cor de fundo (background-color) de toda a página. */
+body {
+  background-color: black;
+}
+/* 002: Altere a cor de todos os títulos h1. */
+h1 {
+  color: brown;
+}
+
+/* 003: Defina um tamanho de fonte de 32px para o título principal. */
+h1 {
+  font-size: 32px; /* substituir 32px por 2rem para permitir que o título se ajuste proporcionalmente às preferências de zoom do usuário. */
+}
+
+/* 004: Centralize todos os textos dentro de uma seção específica. */
+section {
+  text-align: center;
+}
+
+
+/* 005: Mude a família da fonte (font-family) para Arial ou Helvetica. */
+h1 {
+  font-family: "Arial";
+}
+
+/* 006: Aplique negrito (font-weight) a todos os labels de formulário. */
+label {
+  font-weight: bold;
+}
+
+/* 007: Deixe todos os parágrafos em itálico (font-style). */
+p {
+  font-style: italic;
+}
+/* 008: Use uma cor em formato Hexadecimal (#000000). */
+p {
+  color: #000000;
+}
+
+/* 009: Use uma cor em formato RGB (0, 0, 0). */
+p {
+  color: rgb(0, 0, 0);
+}
+/* 010: Use uma cor em formato HSL. */
+p {
+  color: hsl(240, 100%, 50%);
+}
+/* 011: Adicione uma borda sólida de 2px em volta de uma div. */
+div {
+  border: 2px solid;
+}
+
+/* 012: Arredonde os cantos de um botão em 10px (border-radius). */
+button {
+  border-radius: 10px;
+}
+  
+/* 013: Transforme um botão em um círculo perfeito usando 50%.*/
+button {
+  border-radius: 50%;
+}
+/* 014: Adicione um espaçamento interno (padding) de 20px em um card. */
+.card {
+  padding: 20px;
+}
+
+  015: Adicione uma margem externa (margin) de 30px entre duas seções.
+  016: Defina uma largura fixa de 300px para um formulário.
+  017: Defina uma largura máxima (max-width) de 1000px para o container principal.
+  018: Remova o sublinhado de todos os links (text-decoration).
+  019: Mude a cor de um link quando o mouse passar por cima (:hover).
+  020: Adicione um efeito de foco em inputs (:focus).
+  021: Altere a cor de links já visitados (:visited).
+  022: Estilize a primeira letra de cada parágrafo (::first-letter).
+  023: Adicione uma imagem de fundo (background-image) em uma seção.
+  024: Faça o fundo não repetir (background-repeat: no-repeat).
+  025: Centralize a imagem de fundo (background-position: center).
+  026: Faça a imagem de fundo cobrir toda a tela (background-size: cover).
+  027: Deixe uma imagem com 50% de transparência (opacity).
+  028: Crie um degradê linear (linear-gradient) de azul para preto.
+  029: Adicione uma sombra em um card (box-shadow).
+  030: Adicione uma sombra em um texto (text-shadow).
+  031: Transforme todo o texto de um título em maiúsculas (text-transform).
+  032: Aumente o espaço entre as letras (letter-spacing).
+  033: Ajuste a altura das linhas para melhor leitura (line-height).
+  034: Coloque um elemento como posição relativa (position: relative).
+  035: Fixe o menu no topo da tela ao rolar (position: fixed).
+  036: Posicione um botão no canto inferior direito de um card (position: absolute).
+  037: Use o z-index para colocar um elemento na frente de outro.
+  038: Esconda um elemento completamente (display: none).
+  039: Deixe um elemento invisível mas ocupando espaço (visibility: hidden).
+  040: Transforme itens de lista em uma linha (display: inline-block).
+  041: Ative o modo Flexbox em um container (display: flex).
+  042: Centralize itens horizontalmente com Flex (justify-content).
+  043: Centralize itens verticalmente com Flex (align-items).
+  044: Mude a direção dos itens para coluna (flex-direction: column).
+  045: Faça os itens flexíveis ocuparem o espaço restante (flex-grow).
+  046: Distribua itens com espaço igual entre eles (space-between).
+  047: Permita que itens flex quebrem linha (flex-wrap).
+  048: Crie um Grid básico de 3 colunas (display: grid).
+  049: Defina o espaço entre as células do grid (gap).
+  050: Faça um item do grid ocupar 2 colunas (grid-column: span 2).
+  051: Crie um layout de 2 colunas (Sidebar de 250px e Conteúdo 1fr).
+  052: Use media query para mudar a cor do site em telas menores que 768px.
+  053: No mobile, transforme o grid de 2 colunas em 1 coluna.
+  054: Adicione uma transição de 0.3s em todos os botões (transition).
+  055: Faça um elemento girar 45 graus (transform: rotate).
+  056: Aumente um elemento no hover (transform: scale).
+  057: Crie uma animação que faz um elemento pulsar (keyframes).
+  058: Defina o box-sizing como border-box globalmente.
+  059: Personalize a cor da barra de rolagem (scrollbar).
+  060: Crie uma variável CSS para a cor principal (--primary-blue).
+  061: Use a função calc() para definir largura como 100% - 40px.
+  062: Use object-fit: cover em fotos de perfil.
+  063: Estilize a primeira linha de um parágrafo (::first-line).
+  064: Use backdrop-filter: blur para efeito de vidro (Glassmorphism).
+  065: Aplique um filtro de escala de cinza em imagens (filter: grayscale).
+  066: Use column-count para texto em 2 colunas estilo jornal.
+  067: Impeça a seleção de texto em um botão (user-select: none).
+  068: Faça links internos terem rolagem suave (scroll-behavior: smooth).
+  069: Fixe uma imagem de fundo enquanto o texto rola (attachment: fixed).
+  070: Crie um efeito de "Sticky Header" (position: sticky).
+  071: Estilize o container de um formulário focado (:focus-within).
+  072: Use aspect-ratio: 16/9 para manter a proporção de vídeos.
+  073: Crie um tooltip simples usando o pseudo-elemento ::after.
+  074: Use clip-path para cortar uma imagem em formato de triângulo.
+  075: Crie o efeito de texto cortado (text-overflow: ellipsis).
+  076: Estilize um checkbox do zero (appearance: none).
+  077: Use mix-blend-mode para mesclar texto com fundo.
+  078: Implemente o modo escuro usando @media (prefers-color-scheme).
+  079: Use unidades vh e vw para um banner de tela cheia.
+  080: Estilize o texto que o usuário seleciona (::selection).
+  081: Use perspective e rotateY para criar um card que vira (3D).
+  082: Use grid-template-areas para organizar o layout.
+  083: Crie um Spinner (carregamento) animado apenas com bordas.
+  084: Use clamp() para um título que aumenta/diminui conforme a tela.
+  085: Use scroll-snap-type para um carrossel de imagens que "trava".
+  086: Use mask-image para criar transparências graduais em imagens.
+  087: Estilize a numeração de uma lista ordenada (li::marker).
+  088: Use shapes (shape-outside) para texto fluir ao redor de um círculo.
+  089: Crie um efeito de "onda" (ripple) simples no clique.
+  090: Use grid-auto-flow: dense para preencher espaços no layout.
+  091: Estilize o placeholder de todos os inputs.
+  092: Crie um menu onde o sublinhado cresce no hover.
+  093: Use will-change para otimizar animações pesadas.
+  094: Use background-clip: text para texto com fundo de imagem.
+  095: Estilize a barra de progresso (tag progress) via CSS.
+  096: Use @supports para verificar se o navegador aceita Grid.
+  097: Crie um layout de Dashboard Dark Mode.
+  098: Use flex-basis para definir o tamanho base de um item flex.
+  099: Crie uma Galeria estilo Pinterest usando colunas CSS.
+  100: Desenvolva uma Landing Page completa integrando Flex, Grid e Variáveis.
+*/

@@ -1,0 +1,137 @@
+/* 1. RESET UNIVERSAL: 
+   PROBLEMA: Navegadores aplicam margens padrão diferentes.
+   MECANISMO: O seletor '*' atinge todos os elementos. 
+   'box-sizing: border-box' faz com que padding e borda não aumentem o tamanho total do elemento. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+html {
+    background-color: black;
+}
+/* 2. BODY (O CONTAINER PAI):
+   Aqui definimos a base da página.  */
+body {
+    background-color: black;
+    /* CORREÇÃO: Garante que o fundo preto cubra toda a altura da tela, 
+       mesmo que haja pouco conteúdo. */
+    min-height: 100vh;
+    overflow-x: hidden; /* CORREÇÃO: Impede a rolagem horizontal caso algo saia do lugar. */
+    display: flow-root;
+}
+
+header img {
+    display: block;
+    /* 1º valor: topo (100px)
+       2º valor: direita (auto)
+       3º valor: baixo (0)
+       4º valor: esquerda */
+    
+    /*  Isso empurra a logo para baixo a partir do topo do body. */
+    margin: 100px auto 0 50px;
+    width: fit-content;
+}
+/* 3. TIPOGRAFIA DO TÍTULO:
+   'Unbounded' é uma fonte moderna. 
+   DICA: Sempre use unidades relativas como 'rem' em vez de 'px' para acessibilidade (ex: 4rem). */
+h1 {
+    font-size: 64px;
+    font-family: "Unbounded", sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 4. TEXTO DE APOIO:
+   Peso 200 (Extra Light) cria um contraste elegante com o h1 negrito. */
+p {
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    text-align: center;
+}
+
+/* 5. O LINK (ESTILIZADO COMO BOTÃO):
+   MECANISMO: Links são 'inline' por padrão (não aceitam largura/altura). 
+   'display: block' permite que ele se comporte como uma caixa.
+   TRADE-OFF: 'line-height' igual à 'height' centraliza o texto verticalmente, 
+   mas se o texto quebrar para duas linhas, o layout estoura. 
+   ALTERNATIVA: Usar Flexbox (display: flex; align-items: center; justify-content: center;). */
+a {
+    font-family: "Poppins", sans-serif;
+    color: #FFFFFF;
+    font-size: 24px;
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    background-color: #9747ff;
+    width: 340px;
+    height: 66px;
+    display: block;
+    text-align: center;
+    line-height: 66px; /* Truque para centralização vertical */
+    border-radius: 36px;
+    margin: 100px auto;
+}
+
+a:hover {
+    background-color: #8233EB;
+}
+/* 6. AGRUPAMENTO DE SELETORES:
+   Uma Ótima prática, evita repetição (DRY - Don't Repeat Yourself). 
+   Define a cor branca para todos os textos principais de uma vez. */
+h1, p {
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 24px;
+}
+
+/* 7. DESTAQUE ESPECÍFICO (SPAN):
+   MECANISMO: O span é um elemento neutro usado para aplicar estilo 
+   em apenas uma parte do texto dentro de outro elemento. */
+h1 span {
+    color: #9747ff;
+}
+
+section img{
+    display: block;
+    /* 
+    'max-width: 100%' diz: "tenha 792px, mas se a tela for menor, reduza para caber". */
+    max-width: 100%;
+    width: 792px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* RESPONSIVIDADE (MEDIA QUERIES) */
+
+@media (max-width: 768px) {
+    header img {
+        /* Mantendo a logo à esquerda também no tablet, com ajuste de respiro */
+        margin: 65px 0 0 40px;
+    }
+    p {
+        /* MECANISMO: Se definir largura fixa em mobile, o texto pode vazar.
+           Sempre 'max-width' seja 100%. */
+        width: 100%;
+        max-width: 468px;
+    }
+}
+
+@media (max-width: 375px) {
+    header img {
+        max-width: 100%;
+        margin: 32px 0 0 16px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 20px;
+        width: 100%;
+        max-width: 340px;
+    }
+    section img {
+        width: 100%; /* Ajuste para não quebrar em telas muito pequenas */
+        height: auto;
+    }
+}

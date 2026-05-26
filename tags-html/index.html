@@ -1,0 +1,78 @@
+<!-- Declaração ao navegador que estamos usando a versão mais atual do HTML(5)-->
+<!DOCTYPE html>
+<!-- Raiz, o container principal, atributo lang é vital para acessibilidade e idêntificação da Linguagem-->
+<html lang="pt-br">
+<head>
+    <!-- Metadados: Instruções invisíveis para o navegador e motores de busca-->
+    <!-- Define a codificação de caracteres (permite acentos e emojis)-->
+    <meta charset="UTF-8">
+    <!-- Responsividade, garante que o site fique minúsculo em telas de celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Nome que aparece na aba do navegador -->
+    <title>Meu Título da Página</title>
+</head>
+
+<body>
+    <!-- Cabeçalho do Site -->
+    <header>Este é meu cabeçalho</header>
+    <!-- Hierarquia de Títulos: Importante para a estrutura lógica da página 
+     Nunca pule níveis (ex: passar do h1 direto pro h3) -->
+    <h1>Título Nível 1: O assunto Principal da página (use apenas um por página) </h1>
+    <h2>Título Nível 2: Seções Principais</h2>
+    <h3>Título Nível 3: Subseções</h3>
+    <h4>Título Nível 4: Detalhamentos</h4>
+    <h5>Título Nível 5: Blocos menores</h5>
+    <h6>Título Nível 6: O Nível mais baixo de Hierarquia</h6>
+
+    <!-- Texto e Formatação -->
+     <!-- O parágrafo é elemento em 'bloco' (sempre começa em linha nova) -->
+    <p> Esse é um parágrafo de texto em HTML
+        e não importa como eu escrevo, <br> <!-- 'Break Row' <br>: Força uma quebra de linha visual dentro do texto -->
+        pois ele sempre vai ser
+        renderizado em uma única linha
+    </p>
+    <!-- 'Strong' indica importância séria, não estética(negrito) -->
+    <p><strong>Texto</strong> em Negrito</p>
+    <!-- 'em' indica ênfase na fala/leitura (itálico) -->
+    <p><em>Esse é um texto</em> com ênfase</p>
+    <!-- Tipografia Técnica: -->
+    <!-- 'sup' (superscript): Texto elevado, usado para potências ou notas -->
+    <p>Minha casa tem 80m<sup>2</sup></p>
+
+    <!-- 'sub' (Subscript): Texto rebaixado, usado em fórmulas químicas ou índices -->
+    <p>A composição da Água é H<sub>2</sub>O</p>
+
+    <!-- 'hr' gera uma linha de separação-->
+    <hr>
+    <!-- Adicionar imagens no Site, "alt" deixa uma descrição da imagem (acessibilidade) -->
+    <img src="assets/image.png" alt="BackGround Profissional">
+
+    <!-- Listas Ordenadas: Sequência lógica que deve ser seguida -->
+     <h2>Listas</h2>
+     <p>Listas Ordenadas:</p>
+     <ol type"1" start="5">
+        <li>Colocar ovos na Batedeira</li>
+        <li>Colocar a Farinha</li>
+        <li>Colocar o Açucar</li>
+        <li>Colocar o Leite</li>
+     </ol>
+
+    <!-- Listas Desordenadas -->
+     <p>Listas Desordenadas</p>
+     <ul type"square">
+        <li>Comprar Café</li>
+        <li>Comprar Pão</li>
+        <li>Comprar Produtos de Limpeza:</li>
+            <ol type="A">
+                <li>Sabão</li>
+                <li>Detergente</li>
+     </ul>
+     <hr>
+
+    <!-- Lidando com Links -->
+    <h2>Links</h2>
+     <a href="http://phsystech.com.br" target="_blank" rel="external">Acesse Meu Site!</a>
+    <h3>Mais Tags</h3>
+     <a href="tags.html" target="_blank">Navegar</a>
+</body>
+</html>
