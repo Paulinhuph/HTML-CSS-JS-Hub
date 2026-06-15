@@ -1,4 +1,4 @@
-js// ███████ ███████ ████████ ██    ██ ██████   ██████  ███████
+// ███████ ███████ ████████ ██    ██ ██████   ██████  ███████
 // ██      ██         ██    ██    ██ ██   ██ ██    ██ ██
 // █████   ███████    ██    ██    ██ ██   ██ ██    ██ ███████
 // ██           ██    ██    ██    ██ ██   ██ ██    ██      ██
@@ -211,4 +211,27 @@ console.log("Os Números são iguais? ", number1 === number2);
 // Calcule quanto é 15% de 120 usando operadores matemáticos. 
 // Mostre a frase: "15% de 120 é igual a X."
 let calculoPorcentagem = 120 * 0.15;
-console.log("15% de 120 é igual a: ", calculoPorcentagem)
+console.log("15% de 120 é igual a: ", calculoPorcentagem);
+
+// 10. Ordem de operações
+// Escreva a expressão 2 + 3 * 5. 
+// Mostre o resultado e explique por que a multiplicação foi feita antes da soma.
+let ordem = 2 + 3 * 5;
+console.log("Resultado da expressão 2 + 3 * 5: " + resultado); 
+// A multiplicação é feita primeiro por causa da ordem de precedência dos operadores. 
+// 3 * 5 = 15, após 2 + 15 = 17 
+
+// ─────────────────────────────────────────────────────────
+// - Ordem de Operadores:
+// ─────────────────────────────────────────────────────────
+
+// 1 - Parênteses ( )
+
+// 2 - Multiplicação *, Divisão /
+
+// 3 - Adição +, Subtração -
+
+// 4 - Comparações (>, <, >=, <=, ==, !=)
+
+// 5 - Operadores lógicos (!, &&, ||)
+
