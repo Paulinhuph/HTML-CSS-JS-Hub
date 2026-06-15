@@ -280,8 +280,9 @@ let nome = "Paulo Henrique";
 let email = "paulo@teste.com";
 let idade = 21;
 formularioValido = true;
-if (formularioValido === True) {
+if (formularioValido === true) {
     console.log("Formulário enviado com sucesso");
 } else {
     console.log("Por favor, preencha todos os campos corretamente");
 }
+
