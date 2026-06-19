@@ -342,3 +342,272 @@ console.log("Resposta errada!");
 } 
 } 
 fazerPergunta("Qual é a capital do Brasil?", "Brasília"); 
+
+
+// ─────────────────────────────────────────────────────────
+// Praticando: Functions
+// ─────────────────────────────────────────────────────────
+// function darBoasVindas () {
+//  console.log("Olá, Boas vindas!");
+// }
+// darBoasVindas();
+
+// - EXPRESSÂO DE FUNÇÃO
+const nomeVariavel = function (parametros) {
+    // bloco de codigo
+    return
+}
+
+const imprimeOlaMundo = function() {
+    console.log('Olá, mundo!');
+};
+const boasVindas = function(nome) {return "Olá, ", nome}
+
+// código omitido
+
+// criar função que calcula o fatorial de um número usando recursão.
+// fatorial: n! multiplicação de n por seus antecessores maiores ou iguais a 1
+// ex: 5! = 5 x 4 x 3 x 2 x 1
+const fatorial = function f(num) {
+    if (num === 0 || num === 1) return 1; 
+    return num * f (num -1);
+}
+console.log(fatorial(5));
+
+// - ARROW FUNCTION
+// mais compacta e sempre anônimas. 
+// Tem uso restrito do que expressões e declarações de função
+const nomeVariavel = (parametro) => {
+    //bloco de codigo
+    return
+}
+// ─────────────────────────────────────────────────────────
+const soma = (num1, num2) => {
+    console.log(num1 + num2);
+};
+const boasVindas = nome => "Olá!";
+// ─────────────────────────────────────────────────────────
+
+// ─────────────────────────────────────────────────────────
+const calculaJuros = (valor, juros, tempo) => {
+    let taxaJuros = (juros/100) + 1;
+    return valor * Math.pow(taxaJuros, tempo); // pow (Potência)
+}
+console.log(calculaJuros(1000, 5, 2)); // 1000, 5% em 2 meses
+// ─────────────────────────────────────────────────────────
+
+// - FUNÇÔES CALLBACK
+// São passadas como argumentos de outra função, de onde podem receber valores. 
+// São executadas a partir da função externa
+setTimeout (function() {
+    console.log("Olá, Mundo!");
+}, 2000);
+setTimeout (() => console.log("Olá, Mundo"), 2000);
+
+// É possível desacoplar as funções, definindo callbacks separadas da função externa, 
+// chamada de função de ordem superior
+setTimeout(exibeFrase, 5000);
+
+function exibeFrase() {
+    console.log('olá, mundo');
+}
+
+
+// Sua tarefa é criar uma função chamada saudacao que receba um nome como parâmetro, 
+// mas que funcione mesmo 
+// quando nenhum nome for informado, exibindo uma saudação genérica. 
+// Use o parâmetro pré-definido para lidar com isso.
+function saudacaoPersonalizada (nome) {
+    if (nome === undefined || nome === null) {
+        return "Olá Visitante!"
+    } else {
+        return "Olá, " + nome + "!"; 
+    }
+}
+mensagem = saudacaoPersonalizada();
+console.log(mensagem);
+
+// - DESAFIOS
+// ─────────────────────────────────────────────────────────
+// Sua tarefa é criar uma função chamada saudacao que receba um nome como parâmetro, 
+// mas que funcione mesmo 
+// quando nenhum nome for informado, exibindo uma saudação genérica. 
+// Use o parâmetro pré-definido para lidar com isso.
+function saudacaoPersonalizada (nome) {
+    if (nome === undefined || nome === null) {
+        return "Olá Visitante!"
+    } else {
+        return "Olá, " + nome + "!"; 
+    }
+}
+mensagem = saudacaoPersonalizada();
+console.log(mensagem);
+
+// Sua missão é criar uma função chamada calcularDesconto que receba dois parâmetros:
+// o preço original do produto,
+// a porcentagem de desconto (com um valor padrão de 10%).
+function calcularDesconto (precoOriginal, desconto = 10) {
+    precoDesconto = precoOriginal - (precoOriginal * desconto / 100);
+    return precoDesconto;
+}
+console.log(calcularDesconto(100, 20))
+console.log(calcularDesconto(100));
+
+// Imagine que você está criando uma pequena ferramenta para alunos acompanharem seu desempenho escolar. 
+// A ideia é que o aluno insira suas duas notas principais e o sistema exiba a média aritmética entre elas.
+// Sua tarefa é criar uma arrow function chamada calcularMedia que receba duas notas e retorne a média entre elas.
+const calcularMedia = (num1, num2) => {
+    media = (num1 + num2) / 2;
+}
+console.log(calcularMedia(7, 9));
+
+// Sua missão é criar uma arrow function chamada verificarParidade que 
+// receba um número como parâmetro e retorne a string:
+// "Par" se o número for par
+// "Ímpar" se for ímpar
+const verificarParidade = (number) => {
+    if (number % 2 === 0) {
+        return "Par";
+    } else {
+        return "Ímpar";
+    }
+}
+console.log(verificarParidade(11));
+
+//  o sistema precisa calcular o valor do frete com base na distância até o endereço do cliente. A regra é a seguinte:
+// Até 5 km: frete fixo de R$ 5
+// De 5.1 km até 20 km: R$ 0,50 por quilômetro
+// Acima de 20 km: frete fixo de R$ 20
+// Seu desafio é escolher o tipo de função mais adequado para resolver este problema. 
+
+const calcularFrete = (km) => {
+    if (km <= 5) {
+        return "R$ 5.00";
+    } else if (km <= 20) {
+        const totalFrete = (0.5 * km)
+        return `R$ ${totalFrete.toFixed(2)}` // 2 casas decimais
+    } else {
+        return "R$ 20.00"
+    }
+} 
+console.log(calcularFrete(19));
+
+
+// Imagine que você está criando uma função que simula o processamento de um pedido em um site. 
+// Após o processamento, você quer que uma mensagem personalizada seja exibida 
+// mas essa mensagem pode variar dependendo do tipo de cliente: comum, vip ou novo usuário.
+// Sua tarefa é criar uma função chamada processarPedido, que receba três parâmetros:
+// o nome do cliente,
+// o tipo do cliente (vip, novo ou comum),
+// e uma função de callback responsável por exibir uma mensagem após o pedido ser processado.
+
+function processarPedido (nome, tipoCliente, callback) {
+    console.log(`Processando pedido de ${nome}...`);
+    callback(nome, tipoCliente);
+}
+
+function mensagemPersonalizada (nome, tipo) {
+    if (tipo.toLowerCase() === "vip") {
+        setTimeout(() => {
+            console.log(`Obrigado pela preferência, ${nome}! Você ganhou frete grátis.`)
+        }, 200);
+    } else if (tipo.toLowerCase() === "novo") {
+        setTimeout(() => {
+            console.log(`Bem-vindo(a), ${nome}! Aproveite um cupom de boas-vindas.`)
+        }, 200);
+    } else {
+        setTimeout(() => {
+            console.log(`Obrigado pela sua compra, ${nome} !`)
+        }, 200);
+    }
+}
+
+processarPedido("Paulo", "novo", mensagemPersonalizada);
+
+
+// Imagine que você está desenvolvendo uma interface de atendimento online.Quando o usuário envia uma pergunta, o sistema precisa simular que está "pensando" ou "processando a resposta", e só depois exibir a resposta final.]
+// Sua tarefa é criar uma função chamada responderUsuario, que receba dois parâmetros:
+// o nome do usuário, e
+// uma função de callback que será executada após 3 segundos.
+function responderUsuario(nome, callback) {   
+    console.log("Processando sua pergunta...");
+    setTimeout(() => {        
+        callback(nome);
+    }, 3000);
+}
+
+function mostrarResposta(nome) {
+    console.log(`Olá, ${nome}! Aqui está a resposta para sua dúvida.`);
+};
+
+responderUsuario("Paulo", mostrarResposta);
+
+
+// Imagine que você está desenvolvendo um sistema de avaliação para um jogo educativo.Ao final de cada fase, o jogador acumula uma pontuação total, e o sistema precisa avaliar se ele:
+// Foi aprovado, se a pontuação for igual ou maior que 70
+// Precisa de reforço, se a pontuação estiver entre 50 e 69
+// Foi reprovado, se a pontuação for menor que 50
+// Sua tarefa é criar uma função chamada avaliarDesempenho, que receba dois parâmetros:
+// a pontuação final do jogador
+// uma função de callback que será usada para exibir uma mensagem personalizada com base no resultado da avaliação.
+
+function avaliarDesempenho (pontuacao, callback) {
+    let status = ""; 
+    if (pontuacao >= 70) {
+        status = "aprovado";
+    } else if (pontuacao >= 50 && pontuacao <= 69) {
+        status = "reforco";
+    } else {
+        status = "reprovado";
+    }
+    callback(pontuacao, status)
+}
+
+function gerarMensagem(pontuacao, status) {
+   console.log(`Pontuação: ${pontuacao}`)
+   if (status.toLowerCase() === "aprovado") {
+        console.log("Parabéns! Você foi aprovado!");
+   } else if (status.toLowerCase() === "reforco") {
+        console.log("Atenção! Você precisa de reforço.");
+   } else {
+    console.log("Infelizmente, você foi reprovado. Tente novamente.");
+   }
+};
+
+avaliarDesempenho(82, gerarMensagem);
+
+// Você está desenvolvendo um sistema para ajudar pessoas a entenderem melhor o consumo de energia elétrica de seus aparelhos eletrônicos. 
+// O sistema deve calcular o consumo mensal estimado com base no uso diário, classificar o consumo (baixo, moderado ou alto) e exibir uma mensagem clara para o usuário.
+// Sua missão é criar três funções separadas, com responsabilidades bem definidas:
+// calcularConsumo(potencia, horasPorDia): Retorna o consumo mensal em kWh, com base na fórmula: consumo = (potencia × horasPorDia × 30) / 1000
+// classificarConsumo(consumo): Retorna a classificação com base na tabela:
+// Consumo mensal (kWh)	Classificação
+// Abaixo de 50	"Baixo consumo"
+// 50 - 199	"Consumo moderado"
+// 200 ou mais	"Alto consumo"
+// exibirResumo(nomeAparelho, consumo, classificacao): 
+// Exibe uma mensagem como:"Geladeira tem consumo de 180 kWh/mês e é classificada como Consumo moderado."
+
+function calcularConsumo (potencia, horasPorDia) {
+    let consumo = (potencia * horasPorDia * 30) / 1000;
+    return consumo
+}
+
+function classificarConsumo(consumo) {
+    if (consumo < 50) {
+        return "Baixo Consumo."
+    } else if (consumo >= 50 && consumo <= 199) {
+        return "Consumo moderado."
+    } else {
+        return "Alto consumo!"
+    };
+}
+
+function exibirResumo(nomeAparelho, consumo, classificacao) {
+    console.log(`${nomeAparelho} tem consumo de ${consumo} kWh/mês e é classificada como ${classificacao}`)
+}
+
+const nomeAparelho = "Geladeira";
+const consumo = calcularConsumo(150, 4);
+const classificacao = classificarConsumo(consumo);
+exibirResumo(nomeAparelho, consumo, classificacao);
