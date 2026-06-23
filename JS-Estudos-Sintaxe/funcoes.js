@@ -587,12 +587,10 @@ avaliarDesempenho(82, gerarMensagem);
 // 200 ou mais	"Alto consumo"
 // exibirResumo(nomeAparelho, consumo, classificacao): 
 // Exibe uma mensagem como:"Geladeira tem consumo de 180 kWh/mês e é classificada como Consumo moderado."
-
 function calcularConsumo (potencia, horasPorDia) {
     let consumo = (potencia * horasPorDia * 30) / 1000;
     return consumo
 }
-
 function classificarConsumo(consumo) {
     if (consumo < 50) {
         return "Baixo Consumo."
@@ -602,7 +600,6 @@ function classificarConsumo(consumo) {
         return "Alto consumo!"
     };
 }
-
 function exibirResumo(nomeAparelho, consumo, classificacao) {
     console.log(`${nomeAparelho} tem consumo de ${consumo} kWh/mês e é classificada como ${classificacao}`)
 }
@@ -611,3 +608,68 @@ const nomeAparelho = "Geladeira";
 const consumo = calcularConsumo(150, 4);
 const classificacao = classificarConsumo(consumo);
 exibirResumo(nomeAparelho, consumo, classificacao);
+
+// Imagine que você está desenvolvendo um sistema de sorteio interativo para um evento online. Os participantes se inscrevem com um nome e uma pontuação (baseada em atividades realizadas). O sistema deve:
+// Sortear aleatoriamente um nome da lista de participantes.
+// Exibir esse nome com um pequeno atraso (como se fosse um suspense).
+// Avaliar se o participante foi premiado ou não com base na pontuação:
+// Acima de 80: "Parabéns, você foi premiado!"
+// Entre 50 e 80: "Você quase conseguiu! Fique de olho nos próximos sorteios."
+// Abaixo de 50: "Infelizmente, não foi dessa vez."
+// Sua missão é criar:
+// Uma função para sortear um nome aleatoriamente.
+// Uma função para exibir o nome sorteado com 2 segundos de atraso
+// Uma função para avaliar a pontuação.
+// Uma função final que organize o fluxo completo do sorteio.
+
+const sortearParticipante = (lista) => {
+    const indice = Math.floor(Math.random() * lista.length);
+    return lista[indice];
+};
+
+const avaliarPremio = (pontuacao) => {
+    if (pontuacao > 80) {
+        return "Parabéns, você foi premiado!"
+    } else if (pontuacao >= 50) {
+        return "Você quase conseguiu! Fique de olho nos próximos sorteios."
+    } else {
+        return "Infelizmente, não foi dessa vez."
+    }
+};
+
+const exibirResultado = (participante) => {
+    console.log("Sorteando...");
+    setTimeout(() => {
+        console.log(`Participante sorteado: ${participante.nome}`);
+        console.log(`Pontuação: ${participante.pontuacao}`);
+        console.log(avaliarPremio(participante.pontuacao));
+    }, 2000);
+};
+
+function realizarSorteio(lista) {
+    const sorteado = sortearParticipante(lista)
+    exibirResultado(sorteado);
+}
+
+const participantes = [
+    { nome: "laura", pontuacao: 92 },
+    { nome: "Paulo", pontuacao: 67},
+    { nome: "Clara", pontuacao: 44}
+];
+
+realizarSorteio(participantes);
+
+// Sua missão é criar uma função chamada contagemRegressiva que:
+// Receba um número inteiro positivo (ex: 5)
+// Imprima esse número e, a cada chamada, reduza em 1
+// Quando chegar em 0, exiba a mensagem: "Lançamento!"
+// A função deve ser implementada de forma recursiva, sem usar loops (for ou while).
+function contagemRegressiva(numero) {
+    if (numero === 0) {
+        console.log("Lançamento!");
+        return;
+    } 
+    console.log(numero);
+    contagemRegressiva(numero - 1);
+}
+contagemRegressiva(5);
